@@ -6,6 +6,7 @@ import StoryPage from './pages/StoryPage';
 import ChapterPage from './pages/ChapterPage';
 import LoginPage from './pages/LoginPage';
 import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
+import DescriptionPage from './pages/DescriptionPage';
 
 function App() {
 
@@ -20,6 +21,12 @@ function App() {
             path='/chapter' 
             element={
               <ChapterPage/>
+            }
+          />
+          <Route 
+            path='/history' 
+            element={
+              <DescriptionPage text={"O  ano é 2147. A Terra está passando por tempos difíceis. Os recursos naturais estão quase esgotados, e a humanidade precisa encontrar uma nova casa para sobreviver."}/>
             }
           />
           <Route 
