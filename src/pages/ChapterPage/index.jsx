@@ -34,7 +34,7 @@ export default function ChapterPage({ name }) {
   const navigate = useNavigate();
 
   const handleToStoryPage = () => {
-    navigate('/');
+    navigate('/history');
   }
 
   useEffect(() => {

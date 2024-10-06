@@ -7,7 +7,7 @@ const LoginPage = ({ onStart }) => {
   const navigate = useNavigate();
 
   const handleToStoryPage = () => {
-    navigate('/');
+    navigate('/prologue');
   }
 
   return (

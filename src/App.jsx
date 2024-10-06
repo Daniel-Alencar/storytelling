@@ -16,7 +16,16 @@ function App() {
         <BackgroundMusic />
         
         <Routes>
-          <Route path='/' element={<StoryPage/>}/>
+          <Route 
+            path='/' 
+            element={
+              <LoginPage />
+            }
+          />
+          <Route 
+            path='/history' 
+            element={<StoryPage/>}
+          />
           <Route 
             path='/chapter' 
             element={
@@ -24,15 +33,9 @@ function App() {
             }
           />
           <Route 
-            path='/history' 
+            path='/prologue' 
             element={
-              <DescriptionPage text={"O  ano é 2147. A Terra está passando por tempos difíceis. Os recursos naturais estão quase esgotados, e a humanidade precisa encontrar uma nova casa para sobreviver."}/>
-            }
-          />
-          <Route 
-            path='/login' 
-            element={
-              <LoginPage />
+              <DescriptionPage />
             }
           />
           <Route 

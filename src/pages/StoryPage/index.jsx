@@ -5,8 +5,6 @@ import { story } from '../../utils/story';
 import { useState, useEffect } from 'react';
 import BackButton from '../../components/BackButton';
 
-import ChapterPage from '../ChapterPage';
-
 import { useNavigate } from 'react-router-dom';
 
 
@@ -33,18 +31,18 @@ export default function StoryPage() {
 
     if (newIndex >= 0) {
       setStoryIndex(newIndex);
-      if(story[storyChapter].conversations[newIndex].showMinigame) {
+      if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
         navigate('/minigame');
       }
       // Salva o progresso no localStorage
       localStorage.setItem('storyIndex', newIndex); 
     } else {
       let newChapter = storyChapter - 1;
-      newIndex = story[storyChapter - 1].conversations.length - 1;
+      newIndex = story.chapters[storyChapter - 1].conversations.length - 1;
 
       if(newChapter >= 0) {
         setStoryIndex(newIndex);
-        if(story[storyChapter].conversations[newIndex].showMinigame) {
+        if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
           navigate('/minigame');
         }
         setStoryChapter(newChapter);
@@ -54,7 +52,7 @@ export default function StoryPage() {
         
         navigate('/chapter', {
           state: {
-            chapterName: story[newChapter].chapterName
+            chapterName: story.chapters[newChapter].chapterName
           }
         });
       }
@@ -63,22 +61,30 @@ export default function StoryPage() {
 
   // Função para atualizar o índice e salvar no localStorage
   const changeNextStoryIndex = () => {
+    console.log("AQUIII");
+
     let newIndex = storyIndex + 1;
-    if (newIndex < story[storyChapter].conversations.length) {
+    if (newIndex < story.chapters[storyChapter].conversations.length) {
+      console.log("Mudança de diálogo!");
+
       setStoryIndex(newIndex);
-      if(story[storyChapter].conversations[newIndex].showMinigame) {
+      if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
         navigate('/minigame');
       }
 
       // Salva o progresso no localStorage
       localStorage.setItem('storyIndex', newIndex); 
     } else {
+      console.log("Fim de capítulo!");
+
       newIndex = 0;
       let newChapter = storyChapter + 1;
 
-      if(newChapter < story.length) {
+      if(newChapter < story.chapters.length) {
+        console.log("Mudança de capítulo!");
+
         setStoryIndex(newIndex);
-        if(story[storyChapter].conversations[newIndex].showMinigame) {
+        if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
           navigate('/minigame');
         }
         setStoryChapter(newChapter);
@@ -88,7 +94,7 @@ export default function StoryPage() {
 
         navigate('/chapter', {
           state: {
-            chapterName: story[newChapter].chapterName
+            chapterName: story.chapters[newChapter].chapterName
           }
         });
       }
@@ -107,9 +113,6 @@ export default function StoryPage() {
     }
   }, []);
 
-  // if(showChapterPage) {
-  //   return <ChapterPage name={story[storyChapter].chapterName}/>
-  // }
 
   return (
     <div className={styles.App}>
@@ -118,7 +121,7 @@ export default function StoryPage() {
         style={{ 
           // Define a imagem de fundo dinamicamente
           backgroundImage: `url(
-            ${story[storyChapter].conversations[storyIndex].backgroundImage}
+            ${story.chapters[storyChapter].conversations[storyIndex].backgroundImage}
           )`, 
           backgroundSize: 'cover',
           height: '100%',
@@ -131,15 +134,15 @@ export default function StoryPage() {
         <div className={styles.character}>
           <img 
             // Define a imagem do personagem dinamicamente
-            src={story[storyChapter].conversations[storyIndex].characterImage}
+            src={story.chapters[storyChapter].conversations[storyIndex].characterImage}
             alt="Character" 
             className={styles.characterImg}
           />
         </div>
         
         <DialogueBox 
-          title={story[storyChapter].conversations[storyIndex].title}
-          text={story[storyChapter].conversations[storyIndex].description}
+          title={story.chapters[storyChapter].conversations[storyIndex].title}
+          text={story.chapters[storyChapter].conversations[storyIndex].description}
         />
       </div>
 

@@ -73,7 +73,7 @@ function TransitMethodGame() {
       setScore(score + 1);
       alert("Você acertou! Um possível exoplaneta foi detectado!");
       if((score + 1) >= maximumScore) {
-        navigate('/');
+        navigate('/history');
       }
     } else {
       alert("Tente novamente. Esse não contém um exoplaneta.");
