@@ -2,6 +2,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import TransitMethodGame from '../MiniGames/TransitMethodGame';
+import TriviaMethodGame from './TriviaMethodGame';
+
 import styles from './styles.module.css';
 
 export default function MiniGames() {
@@ -20,6 +22,7 @@ export default function MiniGames() {
   return (
     <>
       {currentMinigame === 0 && <TransitMethodGame />}
+      {currentMinigame === 1 && <TriviaMethodGame />}
       {
         currentMinigame !== 0 && 
         <>
