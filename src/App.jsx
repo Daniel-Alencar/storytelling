@@ -5,6 +5,7 @@ import BackgroundMusic from './components/BackgroundMusic';
 import StoryPage from './pages/StoryPage';
 import ChapterPage from './pages/ChapterPage';
 import LoginPage from './pages/LoginPage';
+import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
 
 function App() {
 
@@ -25,6 +26,12 @@ function App() {
             path='/login' 
             element={
               <LoginPage />
+            }
+          />
+          <Route 
+            path='/minigame' 
+            element={
+              <TransitMethodGame />
             }
           />
         </Routes>
