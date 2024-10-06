@@ -10,6 +10,8 @@ function getRandomLuminosity() {
 
 function TransitMethodGame() {
 
+  console.log("AQUIIIIIIIIII");
+
   const maximumScore = 5;
   const navigate = useNavigate();
 

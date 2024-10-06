@@ -33,6 +33,7 @@ export const story = {
           description: `Diálogo 2`,
           backgroundImage: backgroundImage0,
           characterImage: character0,
+          minigame: 0,
         },
       ],
     },
@@ -51,7 +52,7 @@ export const story = {
           description: `Diálogo 4`,
           backgroundImage: backgroundImage0,
           characterImage: character0,
-          showMinigame: true,
+          minigame: 1,
         },
         {
           title: "Título 5",

@@ -21,33 +21,39 @@ export default function StoryPage() {
     : 0;
   const [storyChapter, setStoryChapter] = useState(savedChapter);
 
-  // const [showChapterPage, setShowChapterPage] = useState(false);
-
   const navigate = useNavigate();
+
+  const changeStoryIndex = (newIndex) => {
+    setStoryIndex(newIndex);
+    const minigame = story.chapters[storyChapter].conversations[newIndex].minigame;
+
+    
+    if(minigame != undefined) {
+      console.log("minigame:", minigame);
+      navigate('/minigame', {
+        state: {
+          minigame: minigame
+        }
+      });
+    }
+    // Salva o progresso no localStorage
+    localStorage.setItem('storyIndex', newIndex);
+  }
 
   // Função para atualizar o índice e salvar no localStorage
   const changeBackStoryIndex = () => {
     let newIndex = storyIndex - 1;
 
     if (newIndex >= 0) {
-      setStoryIndex(newIndex);
-      if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
-        navigate('/minigame');
-      }
-      // Salva o progresso no localStorage
-      localStorage.setItem('storyIndex', newIndex); 
+      changeStoryIndex(newIndex);
     } else {
       let newChapter = storyChapter - 1;
       newIndex = story.chapters[storyChapter - 1].conversations.length - 1;
 
       if(newChapter >= 0) {
-        setStoryIndex(newIndex);
-        if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
-          navigate('/minigame');
-        }
+        changeStoryIndex(newIndex);
+
         setStoryChapter(newChapter);
-        // Salva o progresso no localStorage
-        localStorage.setItem('storyIndex', newIndex); 
         localStorage.setItem('chapterIndex', newChapter);
         
         navigate('/chapter', {
@@ -61,35 +67,19 @@ export default function StoryPage() {
 
   // Função para atualizar o índice e salvar no localStorage
   const changeNextStoryIndex = () => {
-    console.log("AQUIII");
 
     let newIndex = storyIndex + 1;
     if (newIndex < story.chapters[storyChapter].conversations.length) {
-      console.log("Mudança de diálogo!");
+      changeStoryIndex(newIndex);
 
-      setStoryIndex(newIndex);
-      if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
-        navigate('/minigame');
-      }
-
-      // Salva o progresso no localStorage
-      localStorage.setItem('storyIndex', newIndex); 
     } else {
-      console.log("Fim de capítulo!");
-
       newIndex = 0;
       let newChapter = storyChapter + 1;
 
       if(newChapter < story.chapters.length) {
-        console.log("Mudança de capítulo!");
+        changeStoryIndex(newIndex);
 
-        setStoryIndex(newIndex);
-        if(story.chapters[storyChapter].conversations[newIndex].showMinigame) {
-          navigate('/minigame');
-        }
         setStoryChapter(newChapter);
-        // Salva o progresso no localStorage
-        localStorage.setItem('storyIndex', newIndex); 
         localStorage.setItem('chapterIndex', newChapter); 
 
         navigate('/chapter', {

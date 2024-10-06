@@ -5,9 +5,11 @@ import BackgroundMusic from './components/BackgroundMusic';
 import StoryPage from './pages/StoryPage';
 import ChapterPage from './pages/ChapterPage';
 import LoginPage from './pages/LoginPage';
-import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
 import DescriptionPage from './pages/DescriptionPage';
 import CreditsPage from './pages/CreditsPage';
+
+import MiniGames from './pages/MiniGames';
+import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
 
 function App() {
 
@@ -42,7 +44,7 @@ function App() {
           <Route 
             path='/minigame' 
             element={
-              <TransitMethodGame />
+              <MiniGames />
             }
           />
           <Route 
