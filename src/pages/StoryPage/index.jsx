@@ -144,7 +144,9 @@ export default function StoryPage() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'flex-end',
-          position: 'relative'
+
+          position: 'relative',
+          bottom: 40,
         }}
       >
         <div className={styles.character}>

@@ -1,9 +1,9 @@
 .dialogue-box {
-  width: 75%;
-  height: 41vh;
+  width: 60%;
+  height: 30vh;
   /* Fundo semi-transparente */
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: auto;
 
   display: flex;

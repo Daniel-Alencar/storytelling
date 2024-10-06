@@ -12,15 +12,17 @@
 
   /* Estilo padrão */
   /* Verde, por exemplo */
-  background-color: #4caf50;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
+
+  font-weight: bold;
 }
 
 .button:hover {
   /* Mudança de cor ao passar o mouse */
   /* Tom mais escuro de verde */
-  background-color: #45a049; 
+  background-color: white; 
   
   /* Efeito de leve aumento */
   transform: scale(1.05);
@@ -34,5 +36,5 @@
   transform: scale(0.95);
 
   /* Mudança na cor do botão ao clicar */
-  background-color: #3e8e41;
+  background-color: white;
 }
