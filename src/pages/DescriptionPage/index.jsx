@@ -86,12 +86,12 @@ export default function DescriptionPage() {
 
       {/* 
       <BackButton
-        text={'Voltar'}
+        text={'Back'}
         onClick={handleToBackPage}
       /> 
       */}
       <NextButton 
-        text={'Próximo'}
+        text={'Next'}
         onClick={handleToNextPage}
       />
     </>

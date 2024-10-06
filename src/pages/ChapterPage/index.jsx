@@ -68,12 +68,12 @@ export default function ChapterPage({ name }) {
 
       {/* 
       <BackButton
-        text={'Voltar'}
+        text={'Back'}
         onClick={handleToStoryPage}
       />
       */}
       <NextButton 
-        text={'Próximo'}
+        text={'Next'}
         onClick={handleToStoryPage}
       />
     </>

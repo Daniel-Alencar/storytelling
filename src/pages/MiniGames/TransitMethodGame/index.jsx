@@ -10,8 +10,6 @@ function getRandomLuminosity() {
 
 function TransitMethodGame() {
 
-  console.log("AQUIIIIIIIIII");
-
   const maximumScore = 5;
   const navigate = useNavigate();
 
@@ -73,12 +71,12 @@ function TransitMethodGame() {
     // Verificamos se o jogador clicou no corpo correto
     if (bodyIndex === correctBody) {
       setScore(score + 1);
-      alert("Você acertou! Um possível exoplaneta foi detectado!");
+      alert("You got it right! A possible exoplanet has been detected!");
       if((score + 1) >= maximumScore) {
         navigate('/history');
       }
     } else {
-      alert("Tente novamente. Esse não contém um exoplaneta.");
+      alert("Try again. This one doesn't contain an exoplanet.");
     }
 
     // Reinicializamos o jogo após cada tentativa
@@ -105,7 +103,7 @@ function TransitMethodGame() {
           ></div>
         ))}
       </div>
-      <p style={{ color: 'white' }}>Pontuação: {score}</p>
+      <p style={{ color: 'white' }}>Score: {`${score}/${maximumScore}`}</p>
     </div>
   );
 }

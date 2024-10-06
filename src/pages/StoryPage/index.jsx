@@ -23,11 +23,13 @@ export default function StoryPage() {
 
   const navigate = useNavigate();
 
+  const [link, setLink] = useState(undefined);
+
   const changeStoryIndex = (newIndex) => {
     setStoryIndex(newIndex);
     const minigame = story.chapters[storyChapter].conversations[newIndex].minigame;
+    const link = story.chapters[storyChapter].conversations[newIndex].link;
 
-    
     if(minigame != undefined) {
       console.log("minigame:", minigame);
       navigate('/minigame', {
@@ -36,6 +38,11 @@ export default function StoryPage() {
         }
       });
     }
+
+    if(link != undefined) {
+      setLink(link);
+    }
+
     // Salva o progresso no localStorage
     localStorage.setItem('storyIndex', newIndex);
   }
@@ -161,17 +168,18 @@ export default function StoryPage() {
         <DialogueBox 
           title={story.chapters[storyChapter].conversations[storyIndex].title}
           text={story.chapters[storyChapter].conversations[storyIndex].description}
+          link={link}
         />
       </div>
 
       {/* 
       <BackButton 
-        text={"Voltar"}
+        text={'Back'}
         onClick={changeBackStoryIndex}
       /> 
       */}
       <NextButton 
-        text={"Próximo"}
+        text={'Next'}
         onClick={changeNextStoryIndex}
       />
     </div>

@@ -151,8 +151,9 @@ export const story = {
           characterImage: character3,
         },
         {
-          title: "",
+          title: "Visit the 'Eyes on Exoplanets'",
           description: `EXPLORE THE EXOPLANETS AND THE CANDIDATES IN NASA'S APPLICATION`,
+          link: 'https://eyes.nasa.gov/apps/exo/',
           backgroundImage: bg12,
           characterImage: character3,
         },
@@ -205,8 +206,8 @@ export const story = {
           characterImage: character3,
         },
         {
-          title: "",
-          description: ``,
+          title: "Types of Exoplanets",
+          description: `The Exoplanets now have been successfully identified!`,
           backgroundImage: bg19,
           characterImage: character3,
           minigame: 1,
@@ -231,7 +232,7 @@ export const story = {
         },
         {
           title: "The end of the journey",
-          description: `The crew of the Stella Explorer left a message for future generations: "Continue the journey. The stars still have secrets to reveal, and humanity will always find new horizons.`,
+          description: `The crew of the Stella Explorer left a message for future generations: "Continue the journey. The stars still have secrets to reveal, and humanity will always find new horizons."`,
           backgroundImage: bg22,
           characterImage: character1,
         },
@@ -246,6 +247,6 @@ export const story = {
   ],
   credits: {
     team: 'T.A.R.D.I.S',
-    slogan: 'The adventure never ends...Actually, it ends...'
+    slogan: 'The adventure never ends...'
   }
 };

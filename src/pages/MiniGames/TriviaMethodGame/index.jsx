@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Dados das perguntas do quiz
 const quizData = [
   {
-    question: 'O efeito Doppler é um fenômeno relacionado à mudança na frequência de uma onda devido ao movimento relativo entre a fonte e o observador.',
-    correctAnswer: 'Verdadeiro',
-    options: ['Verdadeiro', 'Falso'],
+    question: 'The Doppler effect is a phenomenon related to the change in wave frequency due to the relative motion between the source and the observer.',
+    correctAnswer: 'True',
+    options: ['True', 'False'],
   },
   {
-    question: 'Um exoplaneta é um planeta que orbita uma estrela fora do nosso sistema solar.',
-    correctAnswer: 'Verdadeiro',
-    options: ['Verdadeiro', 'Falso'],
+    question: 'An exoplanet is a planet that orbits a star outside our solar system.',
+    correctAnswer: 'True',
+    options: ['True', 'False'],
   },
   {
-    question: 'O exoplaneta mais próximo da Terra está a 4,24 anos-luz de distância.',
-    correctAnswer: 'Verdadeiro',
-    options: ['Verdadeiro', 'Falso'],
+    question: 'The nearest exoplanet to Earth is 4.24 light-years away.',
+    correctAnswer: 'True',
+    options: ['True', 'False'],
   },
   {
-    question: 'Todos os exoplanetas descobertos até agora são habitáveis.',
-    correctAnswer: 'Falso',
-    options: ['Verdadeiro', 'Falso'],
+    question: 'All exoplanets discovered so far are habitable.',
+    correctAnswer: 'False',
+    options: ['True', 'False'],
   },
 ];
 
@@ -47,10 +46,10 @@ function TriviaMethodGame() {
 
       // Verifica se a resposta está correta
       if (option === quizData[currentQuestionIndex].correctAnswer) {
-          setScore(score + 1);
-          alert('Você acertou!');
+        setScore(score + 1);
+        alert('You got it right!');
       } else {
-          alert('Você errou!');
+        alert('You got it wrong!');
       }
     };
 
@@ -61,7 +60,7 @@ function TriviaMethodGame() {
       if (currentQuestionIndex < quizData.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       } else {
-        alert(`Fim do jogo! Sua pontuação final é: ${score}/${quizData.length}`);
+        alert(`Game over! Your final score is: ${score}/${quizData.length}`);
         navigate('/history');
       }
     };
@@ -93,12 +92,12 @@ function TriviaMethodGame() {
         {/* Botão para avançar para a próxima pergunta */}
         {answered && (
           <button style={styles.nextButton} onClick={handleNextQuestion}>
-            <p>Próxima Pergunta</p>
+            <p>Next question</p>
           </button>
         )}
 
         {/* Exibição da pontuação */}
-        <p style={{ color: 'white', marginTop: '20px' }}>Pontuação: {score}</p>
+        <p style={{ color: 'white', marginTop: '20px' }}>Score: {score}</p>
       </div>
     </div>
   );
