@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import NextButton from '../../components/NextButton';
 
+import { useLocation, useNavigate } from 'react-router-dom';
+
 function repeatSecondCharacter(str) {
   // Verifica se a string tem pelo menos dois caracteres
   if (str.length < 2) {
@@ -18,11 +20,21 @@ function repeatSecondCharacter(str) {
 }
 
 export default function ChapterPage({ name }) {
+
+  const location = useLocation();
+  const { chapterName } = location.state || {};
+
   // Estado para o texto sendo "digitado"
   const [displayedName, setDisplayedName] = useState('');  
   const [completedName, setCompletedName] = useState(
-    repeatSecondCharacter(name)
+    repeatSecondCharacter(chapterName)
   );
+
+  const navigate = useNavigate();
+
+  const handleToStoryPage = () => {
+    navigate('/');
+  }
 
   useEffect(() => {
     let currentIndex = 0;
@@ -52,9 +64,10 @@ export default function ChapterPage({ name }) {
           </div>
         </div>
       </div>
+
       <NextButton 
         text={'Próximo'}
-        onClick={() => {}}
+        onClick={handleToStoryPage}
       />
     </>
   );

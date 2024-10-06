@@ -5,6 +5,11 @@ import { story } from '../../utils/story';
 import { useState, useEffect } from 'react';
 import BackButton from '../../components/BackButton';
 
+import ChapterPage from '../ChapterPage';
+
+import { useNavigate } from 'react-router-dom';
+
+
 export default function StoryPage() {
   // Carrega o índice da história do localStorage (ou usa 0 se não houver)
   const savedIndex = localStorage.getItem('storyIndex') 
@@ -17,6 +22,10 @@ export default function StoryPage() {
     ? parseInt(localStorage.getItem('storyChapter')) 
     : 0;
   const [storyChapter, setStoryChapter] = useState(savedChapter);
+
+  // const [showChapterPage, setShowChapterPage] = useState(false);
+
+  const navigate = useNavigate();
 
   // Função para atualizar o índice e salvar no localStorage
   const changeBackStoryIndex = () => {
@@ -35,7 +44,13 @@ export default function StoryPage() {
         setStoryChapter(newChapter);
         // Salva o progresso no localStorage
         localStorage.setItem('storyIndex', newIndex); 
-        localStorage.setItem('storyChapter', newChapter); 
+        localStorage.setItem('storyChapter', newChapter);
+        
+        navigate('/chapter', {
+          state: {
+            chapterName: story[newChapter].chapterName
+          }
+        });
       }
     }
   };
@@ -57,6 +72,12 @@ export default function StoryPage() {
         // Salva o progresso no localStorage
         localStorage.setItem('storyIndex', newIndex); 
         localStorage.setItem('storyChapter', newChapter); 
+
+        navigate('/chapter', {
+          state: {
+            chapterName: story[newChapter].chapterName
+          }
+        });
       }
     }
   };
@@ -72,6 +93,10 @@ export default function StoryPage() {
       setStoryChapter(parseInt(storedChapter));
     }
   }, []);
+
+  // if(showChapterPage) {
+  //   return <ChapterPage name={story[storyChapter].chapterName}/>
+  // }
 
   return (
     <div className={styles.App}>

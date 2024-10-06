@@ -70,6 +70,7 @@ import character1 from '../assets/StoryPage/character1.png';
 export const story = [
   {
     chapter: 0,
+    chapterName: "Capítulo 0: Prólogo",
     conversations: [
       {
         title: "Prólogo",
@@ -101,6 +102,7 @@ export const story = [
   },
   {
     chapter: 1,
+    chapterName: "Capítulo 1: A decisão",
     conversations: [
       {
         title: "Capítulo 3: O Segredo Oculto",
@@ -134,6 +136,7 @@ export const story = [
   },
   {
     chapter: 2,
+    chapterName: "Capítulo final: O dilema",
     conversations: [
       {
         title: "Epílogo: O Futuro da Humanidade",
