@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Dados das perguntas do quiz
 const quizData = [
@@ -25,8 +26,9 @@ const quizData = [
 ];
 
 // Componente principal do mini-jogo de trivia
-function TriviaGame() {
-    const navigate = useNavigate()
+function TriviaMethodGame() {
+    const navigate = useNavigate();
+    
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Índice da pergunta atual
     const [score, setScore] = useState(0); // Pontuação do jogador
     const [answered, setAnswered] = useState(false); // Verifica se o jogador já respondeu a pergunta

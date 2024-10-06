@@ -54,6 +54,12 @@ function App() {
               <CreditsPage />
             }
           />
+          <Route 
+            path='/aaa' 
+            element={
+              <TriviaMethodGame />
+            }
+          />
         </Routes>
       </Router>
     </>
