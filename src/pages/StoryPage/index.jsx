@@ -66,7 +66,7 @@ export default function StoryPage() {
         navigate('/chapter', {
           state: {
             chapterName: story.chapters[newChapter].chapterName,
-            backgroundImage: newChapter,
+            chapterIndex: newChapter,
           }
         });
       }
@@ -93,7 +93,7 @@ export default function StoryPage() {
         navigate('/chapter', {
           state: {
             chapterName: story.chapters[newChapter].chapterName,
-            backgroundImage: newChapter,
+            chapterIndex: newChapter,
           }
         });
       } else {
