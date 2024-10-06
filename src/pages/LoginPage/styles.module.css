@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('../../assets/StoryPage/background0.webp') no-repeat center center;
+  background: url('../../assets/StoryPage/background0.avif') no-repeat center center;
   background-size: cover;
   font-family: 'Press Start 2P', cursive; 
 }
@@ -12,13 +12,11 @@
 .login-title {
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .login-button {
   padding: 15px 30px;
-  font-size: 1.5rem;
   color: #ffffff;
   background-color: #1a1a1a;
   border: none;

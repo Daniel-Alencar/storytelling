@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
+
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = ({ onStart }) => {
@@ -16,9 +17,9 @@ const LoginPage = ({ onStart }) => {
 
   return (
     <div className={styles['login-container']}>
-      <h1 className={styles['login-title']}>Explore essa aventura</h1>
+      <h1 className={styles['login-title']}>T.A.R.D.I.S</h1>
       <button className={styles['login-button']} onClick={handleToStoryPage}>
-        Começar
+        <h2>{"PRESS START"}</h2>
       </button>
     </div>
   );

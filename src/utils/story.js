@@ -1,9 +1,18 @@
-import backgroundImage0 from '../assets/StoryPage/background0.webp';
-import backgroundImage1 from '../assets/StoryPage/background1.webp';
+import bg0 from '../assets/StoryPage/bg/bg0.png';
+import bg1 from '../assets/StoryPage/bg/bg1.png';
+import bg2 from '../assets/StoryPage/bg/bg2.png';
+import bg2_1 from '../assets/StoryPage/bg/bg2-1.png';
+import bg3 from '../assets/StoryPage/bg/bg3.jpg';
+import bg4 from '../assets/StoryPage/bg/bg4.png';
+import bg5 from '../assets/StoryPage/bg/bg5.png';
+import bg5_1 from '../assets/StoryPage/bg/bg5-1.png';
+import bg6 from '../assets/StoryPage/bg/bg6.png';
+import bg7 from '../assets/StoryPage/bg/bg7.png';
+import bg8 from '../assets/StoryPage/bg/bg8.png';
 
-import character0 from '../assets/StoryPage/character0.png';
 import character1 from '../assets/StoryPage/character1.png';
 import character2 from '../assets/StoryPage/character2.png';
+import character3 from '../assets/StoryPage/character3.png';
 
 export const story = {
   title: "O Destino Além das Estrelas: A Missão que Mudou Tudo",
@@ -20,20 +29,20 @@ export const story = {
         {
           title: "Título 0",
           description: `Diálogo 0`,
-          backgroundImage: backgroundImage0,
-          characterImage: character2,
+          backgroundImage: bg2,
+          characterImage: character1,
         },
         {
           title: "Título 1",
           description: `Diálogo 1`,
-          backgroundImage: backgroundImage1,
+          backgroundImage: bg2,
           characterImage: character1,
         },
         {
           title: "Título 2",
           description: `Diálogo 2`,
-          backgroundImage: backgroundImage0,
-          characterImage: character0,
+          backgroundImage: bg2_1,
+          characterImage: character1,
           minigame: 0,
         },
       ],
@@ -45,21 +54,21 @@ export const story = {
         {
           title: "Título 3",
           description: `Diálogo 3`,
-          backgroundImage: backgroundImage1,
-          characterImage: character1,
+          backgroundImage: bg3,
+          characterImage: character2,
         },
         {
           title: "Título 4",
           description: `Diálogo 4`,
-          backgroundImage: backgroundImage0,
-          characterImage: character0,
+          backgroundImage: bg3,
+          characterImage: character2,
           minigame: 1,
         },
         {
           title: "Título 5",
           description: `Diálogo 5`,
-          backgroundImage: backgroundImage1,
-          characterImage: character1,
+          backgroundImage: bg3,
+          characterImage: character2,
         },
       ]
     },
@@ -70,8 +79,8 @@ export const story = {
         {
           title: "Título 6",
           description: `Diálogo 6`,
-          backgroundImage: backgroundImage0,
-          characterImage: character0,
+          backgroundImage: bg4,
+          characterImage: character3,
         }
       ]
     }

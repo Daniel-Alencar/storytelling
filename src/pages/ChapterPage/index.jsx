@@ -23,7 +23,7 @@ function repeatSecondCharacter(str) {
 export default function ChapterPage({ name }) {
 
   const location = useLocation();
-  const { chapterName } = location.state || {};
+  const { chapterName, backgroundImage } = location.state || {};
 
   // Estado para o texto sendo "digitado"
   const [displayedName, setDisplayedName] = useState('');  
@@ -66,8 +66,8 @@ export default function ChapterPage({ name }) {
         </div>
       </div>
 
-      {
-      /* <BackButton
+      {/* 
+      <BackButton
         text={'Voltar'}
         onClick={handleToStoryPage}
       />
