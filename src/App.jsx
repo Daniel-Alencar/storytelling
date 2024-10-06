@@ -1,8 +1,13 @@
+import BackgroundMusic from './components/BackgroundMusic';
+
 import StoryPage from './pages/StoryPage';
 
 function App() {
   return (
-    <StoryPage/>
+    <>
+      <BackgroundMusic />
+      <StoryPage/>
+    </>
   )
 }
 
