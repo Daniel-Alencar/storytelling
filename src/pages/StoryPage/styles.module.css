@@ -4,17 +4,6 @@
   width: 100vw;
 }
 
-.background {
-  /* Caminho da imagem de background */
-  background-image: url('../../assets/StoryPage/background.webp');
-  background-size: cover;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: relative;
-}
-
 .character {
   position: absolute;
   bottom: 120px;
@@ -25,4 +14,3 @@
   /* Ajuste o tamanho da imagem conforme necessário */
   height: 300px;
 }
-

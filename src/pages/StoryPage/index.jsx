@@ -1,5 +1,4 @@
 import styles from './styles.module.css';
-import characterImage from '../../assets/StoryPage/character.png';
 import DialogueBox from '../../components/DialogueBox';
 import NextButton from '../../components/NextButton';
 import { story } from '../../utils/story';
@@ -32,10 +31,23 @@ export default function StoryPage() {
 
   return (
     <div className={styles.App}>
-      <div className={styles.background}>
+      <div 
+        className={styles.background} 
+        style={{ 
+          // Define a imagem de fundo dinamicamente
+          backgroundImage: `url(${story[storyIndex].backgroundImage})`, 
+          backgroundSize: 'cover',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-end',
+          position: 'relative'
+        }}
+      >
         <div className={styles.character}>
           <img 
-            src={characterImage} 
+            // Define a imagem do personagem dinamicamente
+            src={story[storyIndex].characterImage}
             alt="Character" 
             className={styles.characterImg}
           />
