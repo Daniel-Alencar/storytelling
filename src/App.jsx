@@ -10,6 +10,7 @@ import CreditsPage from './pages/CreditsPage';
 
 import MiniGames from './pages/MiniGames';
 import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
+import TriviaMethodGame from './pages/MiniGames/TriviaMethodGame';
 
 function App() {
 
@@ -60,3 +61,4 @@ function App() {
 }
 
 export default App
+
