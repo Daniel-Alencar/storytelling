@@ -6,11 +6,11 @@
 
 .character {
   position: absolute;
-  bottom: 120px;
-  left: 5%;
+  bottom: 0px;
+  left: 10%;
 }
 
 .characterImg {
   /* Ajuste o tamanho da imagem conforme necessário */
-  height: 300px;
+  height: 500px;
 }
