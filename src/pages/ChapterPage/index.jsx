@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import NextButton from '../../components/NextButton';
 
 import { useLocation, useNavigate } from 'react-router-dom';
+import BackButton from '../../components/BackButton';
 
 function repeatSecondCharacter(str) {
   // Verifica se a string tem pelo menos dois caracteres
@@ -65,6 +66,10 @@ export default function ChapterPage({ name }) {
         </div>
       </div>
 
+      <BackButton
+        text={'Voltar'}
+        onClick={handleToStoryPage}
+      />
       <NextButton 
         text={'Próximo'}
         onClick={handleToStoryPage}
