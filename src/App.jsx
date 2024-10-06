@@ -10,6 +10,7 @@ import CreditsPage from './pages/CreditsPage';
 
 import MiniGames from './pages/MiniGames';
 import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
+import KeplerImages from './pages/KeplerImages';
 
 function App() {
 
@@ -51,6 +52,12 @@ function App() {
             path='/credits' 
             element={
               <CreditsPage />
+            }
+          />
+          <Route 
+            path='/kepler' 
+            element={
+              <KeplerImages />
             }
           />
         </Routes>
