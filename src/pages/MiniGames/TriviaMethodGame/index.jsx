@@ -62,12 +62,7 @@ function TriviaMethodGame() {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       } else {
         alert(`Fim do jogo! Sua pontuação final é: ${score}/${quizData.length}`);
-        // Reinicia o jogo
-        navigate('/minigame', {
-            state: {
-                minigame: 1
-            }
-        })
+        navigate('/history');
       }
     };
 

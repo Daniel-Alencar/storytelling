@@ -24,7 +24,7 @@ export default function MiniGames() {
       {currentMinigame === 0 && <TransitMethodGame />}
       {currentMinigame === 1 && <TriviaMethodGame />}
       {
-        currentMinigame !== 0 && 
+        currentMinigame == undefined && 
         <>
           <p>Nenhum minigame disponível</p>
           <button onClick={() => navigate('/history')}>
