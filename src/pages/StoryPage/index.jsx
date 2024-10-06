@@ -97,6 +97,8 @@ export default function StoryPage() {
             chapterName: story.chapters[newChapter].chapterName
           }
         });
+      } else {
+        navigate('/credits')
       }
     }
   };

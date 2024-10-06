@@ -73,5 +73,9 @@ export const story = {
         }
       ]
     }
-  ]
+  ],
+  credits: {
+    team: 'T.A.R.D.I.S',
+    slogan: 'Porque nada melhor do que aprender ciência com história.'
+  }
 };

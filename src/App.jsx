@@ -7,6 +7,7 @@ import ChapterPage from './pages/ChapterPage';
 import LoginPage from './pages/LoginPage';
 import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
 import DescriptionPage from './pages/DescriptionPage';
+import CreditsPage from './pages/CreditsPage';
 
 function App() {
 
@@ -42,6 +43,12 @@ function App() {
             path='/minigame' 
             element={
               <TransitMethodGame />
+            }
+          />
+          <Route 
+            path='/credits' 
+            element={
+              <CreditsPage />
             }
           />
         </Routes>
