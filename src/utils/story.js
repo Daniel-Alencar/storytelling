@@ -27,8 +27,8 @@ export const story = {
       chapterName: "    Capítulo 0: Prólogo",
       conversations: [
         {
-          title: "Título 0",
-          description: `Diálogo 0`,
+          title: "Departure",
+          description: `You are in the command room of the ship, gazing at Earth for the last time. Captain Aurora calls the crew for a meeting. "Earth is in danger. We need to find a habitable planet, and fast!"`,
           backgroundImage: bg2,
           characterImage: character1,
         },

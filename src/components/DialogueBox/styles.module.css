@@ -1,15 +1,44 @@
 .dialogue-box {
-  width: 80%;
-  padding: 20px;
+  width: 75%;
+  height: 41vh;
   /* Fundo semi-transparente */
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
   position: absolute;
   bottom: 20px;
-  left: 10%;
-  font-size: 18px;
-  color: #333;
+  left: auto;
 
-  /* background: url('../../assets/StoryPage/DialogueBox.png') no-repeat center center;
-  background-size: cover; */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  background: url('../../assets/StoryPage/DialogueBox.png');
+  background-size: cover;
+
+  font-size: 18px;
+  color: white;
+
+  border: 0px solid red;
+}
+
+.title {
+  border: 0px solid blue;
+  position: relative;
+  top: 14%;
+
+  font-size: 2vw;
+
+  text-align: center;
+}
+
+.description {
+  border: 0px solid blue;
+  position: relative;
+  top: 24%;
+
+  font-size: 1.5vw;
+  
+  padding-left: 40px;
+  padding-right: 40px;
+
+  text-align: center;
 }
