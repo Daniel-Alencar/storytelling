@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 import BackgroundMusic from './components/BackgroundMusic';
 
 import StoryPage from './pages/StoryPage';
@@ -5,8 +7,13 @@ import StoryPage from './pages/StoryPage';
 function App() {
   return (
     <>
-      <BackgroundMusic />
-      <StoryPage/>
+      <Router>
+        <BackgroundMusic />
+        
+        <Routes>
+          <Route path='/' element={<StoryPage/>}/>
+        </Routes>
+      </Router>
     </>
   )
 }
