@@ -44,6 +44,7 @@ export const story = [
         description: `Diálogo 4`,
         backgroundImage: backgroundImage0,
         characterImage: character0,
+        showMinigame: true,
       },
       {
         title: "Título 5",

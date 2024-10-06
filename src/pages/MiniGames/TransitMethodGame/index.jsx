@@ -1,38 +1,46 @@
 
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 // Função para gerar luminosidade randomicamente para os corpos normais
 function getRandomLuminosity() {
-  return Math.random() * 10 + 90; // Luminosidade varia entre 80 e 100
+  // Luminosidade varia entre 80 e 100
+  return Math.random() * 10 + 90;
 }
 
 function TransitMethodGame() {
-  const [luminosityGroup, setLuminosityGroup] = useState([]);
-  const [score, setScore] = useState(0); // Pontuação do jogador
-  const [correctBody, setCorrectBody] = useState(null); // Índice do corpo correto (contém o exoplaneta)
-  const [blinkingLuminosity, setBlinkingLuminosity] = useState(100); // Luminosidade que pisca do exoplaneta
-  const [positions, setPositions] = useState([]); // Posições randomizadas das estrelas
 
-  // Função que inicializa o jogo, definindo luminosidade para cada corpo e qual é o exoplaneta
+  const maximumScore = 5;
+  const navigate = useNavigate();
+
+  const [luminosityGroup, setLuminosityGroup] = useState([]);
+  // Pontuação do jogador
+  const [score, setScore] = useState(0);
+  // Índice do corpo correto (contém o exoplaneta)
+  const [correctBody, setCorrectBody] = useState(null);
+  // Luminosidade que pisca do exoplaneta
+  const [blinkingLuminosity, setBlinkingLuminosity] = useState(100); 
+  // Posições randomizadas das estrelas
+  const [positions, setPositions] = useState([]); 
+
+  // Função que inicializa o jogo
   const initializeGame = () => {
     const group = [];
     const newPositions = [];
     for (let i = 0; i < 15; i++) {
       group.push(getRandomLuminosity());
       newPositions.push({
-        left: Math.random() * 90 + 'vw', // Posição horizontal aleatória (máximo de 90vw)
-        top: Math.random() * 30 + 'vh', // Posição vertical aleatória na parte de cima da tela (máximo de 30vh)
+        // Posição horizontal aleatória (máximo de 90vw)
+        left: Math.random() * 90 + 'vw',
+        // Posição vertical aleatória na parte de cima da tela (máximo de 30vh) 
+        top: Math.random() * 30 + 'vh', 
       });
     }
 
     // Definimos um corpo aleatório que terá o efeito de trânsito (exoplaneta piscando)
     const randomBody = Math.floor(Math.random() * 8);
-    group[randomBody] = 100; // Definimos inicialmente a luminosidade do exoplaneta (máxima, antes de piscar)
+    // Definimos inicialmente a luminosidade do exoplaneta (máxima, antes de piscar)
+    group[randomBody] = 100;
     
     setLuminosityGroup(group);
     setCorrectBody(randomBody); // Salvamos qual corpo tem o exoplaneta
@@ -64,6 +72,9 @@ function TransitMethodGame() {
     if (bodyIndex === correctBody) {
       setScore(score + 1);
       alert("Você acertou! Um possível exoplaneta foi detectado!");
+      if((score + 1) >= maximumScore) {
+        navigate('/');
+      }
     } else {
       alert("Tente novamente. Esse não contém um exoplaneta.");
     }
@@ -86,7 +97,8 @@ function TransitMethodGame() {
               left: positions[bodyIndex]?.left,
               top: positions[bodyIndex]?.top,
               opacity: bodyIndex === correctBody ? blinkingLuminosity / 100 : luminosity / 100,
-              backgroundImage: 'url(src/assets/MinigameTransito/star_game1.png)', // Substitua com o caminho da sua imagem de estrela
+              // Substitua com o caminho da sua imagem de estrela
+              backgroundImage: 'url(src/assets/MinigameTransito/star_game1.png)', 
             }}
           ></div>
         ))}
@@ -98,30 +110,34 @@ function TransitMethodGame() {
 
 
 const styles = {
-    background: {
-        backgroundImage: 'url(src/assets/MinigameTransito/background_game1.webp)', // Imagem de fundo
-        backgroundSize: 'cover',
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative', // Necessário para que os corpos sejam posicionados de forma absoluta
-    },
-    groupContainer: {
-        position: 'relative',
-        width: '100%',
-        height: '100%', // O container cobre toda a tela
-    },
-    body: {
-        cursor: 'pointer',
-        width: '60px',
-        height: '60px',
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-        border: 'none', // Removendo borda
-    },
+  background: {
+    // Imagem de fundo
+    backgroundImage: 'url(src/assets/MinigameTransito/background_game1.webp)',
+    backgroundSize: 'cover',
+    width: '100vw',
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // Necessário para que os corpos sejam posicionados de forma absoluta
+    position: 'relative',
+  },
+  groupContainer: {
+    position: 'relative',
+    width: '100%',
+    // O container cobre toda a tela
+    height: '100%',
+  },
+  body: {
+    cursor: 'pointer',
+    width: '60px',
+    height: '60px',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    // Removendo borda
+    border: 'none',
+  },
 };
 
 export default TransitMethodGame;

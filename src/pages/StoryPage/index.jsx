@@ -33,6 +33,9 @@ export default function StoryPage() {
 
     if (newIndex >= 0) {
       setStoryIndex(newIndex);
+      if(story[storyChapter].conversations[newIndex].showMinigame) {
+        navigate('/minigame');
+      }
       // Salva o progresso no localStorage
       localStorage.setItem('storyIndex', newIndex); 
     } else {
@@ -41,6 +44,9 @@ export default function StoryPage() {
 
       if(newChapter >= 0) {
         setStoryIndex(newIndex);
+        if(story[storyChapter].conversations[newIndex].showMinigame) {
+          navigate('/minigame');
+        }
         setStoryChapter(newChapter);
         // Salva o progresso no localStorage
         localStorage.setItem('storyIndex', newIndex); 
@@ -60,6 +66,10 @@ export default function StoryPage() {
     let newIndex = storyIndex + 1;
     if (newIndex < story[storyChapter].conversations.length) {
       setStoryIndex(newIndex);
+      if(story[storyChapter].conversations[newIndex].showMinigame) {
+        navigate('/minigame');
+      }
+
       // Salva o progresso no localStorage
       localStorage.setItem('storyIndex', newIndex); 
     } else {
@@ -68,6 +78,9 @@ export default function StoryPage() {
 
       if(newChapter < story.length) {
         setStoryIndex(newIndex);
+        if(story[storyChapter].conversations[newIndex].showMinigame) {
+          navigate('/minigame');
+        }
         setStoryChapter(newChapter);
         // Salva o progresso no localStorage
         localStorage.setItem('storyIndex', newIndex); 
