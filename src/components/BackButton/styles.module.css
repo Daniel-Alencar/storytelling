@@ -1,11 +1,38 @@
-
 .button {
   position: absolute;
-  left: 20px;
+  right: 20px;
   bottom: 20px;
 
   padding: 20px;
   border-radius: 10px;
-
   cursor: pointer;
+
+  /* Adicionando transição suave */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Estilo padrão */
+  /* Verde, por exemplo */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+.button:hover {
+  /* Mudança de cor ao passar o mouse */
+  /* Tom mais escuro de verde */
+  background-color: #45a049; 
+  
+  /* Efeito de leve aumento */
+  transform: scale(1.05);
+
+  /* Sombra ao passar o mouse */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  /* Efeito de clique */
+  transform: scale(0.95);
+
+  /* Mudança na cor do botão ao clicar */
+  background-color: #3e8e41;
 }
