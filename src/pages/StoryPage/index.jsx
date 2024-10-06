@@ -3,6 +3,7 @@ import DialogueBox from '../../components/DialogueBox';
 import NextButton from '../../components/NextButton';
 import { story } from '../../utils/story';
 import { useState, useEffect } from 'react';
+import BackButton from '../../components/BackButton';
 
 export default function StoryPage() {
   // Carrega o índice da história do localStorage (ou usa 0 se não houver)
@@ -12,7 +13,17 @@ export default function StoryPage() {
   const [storyIndex, setStoryIndex] = useState(savedIndex);
 
   // Função para atualizar o índice e salvar no localStorage
-  const changeStoryIndex = () => {
+  const changeBackStoryIndex = () => {
+    const newIndex = storyIndex - 1;
+    if (newIndex >= 0) {
+      setStoryIndex(newIndex);
+      // Salva o progresso no localStorage
+      localStorage.setItem('storyIndex', newIndex); 
+    }
+  };
+
+  // Função para atualizar o índice e salvar no localStorage
+  const changeNextStoryIndex = () => {
     const newIndex = storyIndex + 1;
     if (newIndex < story.length) {
       setStoryIndex(newIndex);
@@ -59,9 +70,13 @@ export default function StoryPage() {
         />
       </div>
 
+      <BackButton 
+        text={"Voltar"}
+        onClick={changeBackStoryIndex}
+      />
       <NextButton 
         text={"Próximo"}
-        onClick={changeStoryIndex}
+        onClick={changeNextStoryIndex}
       />
     </div>
   );
