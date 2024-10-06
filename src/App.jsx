@@ -9,7 +9,6 @@ import DescriptionPage from './pages/DescriptionPage';
 import CreditsPage from './pages/CreditsPage';
 
 import MiniGames from './pages/MiniGames';
-import TransitMethodGame from './pages/MiniGames/TransitMethodGame';
 import KeplerImages from './pages/KeplerImages';
 
 function App() {

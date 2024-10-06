@@ -79,7 +79,7 @@ export default function DescriptionPage() {
       <div className={styles.App}>
         <div className={styles.background}>
           <div className={styles.contentContainer}>
-            <p className={styles.name}>{displayedText}</p>
+            <h2 className={styles.name}>{displayedText}</h2>
           </div>
         </div>
       </div>

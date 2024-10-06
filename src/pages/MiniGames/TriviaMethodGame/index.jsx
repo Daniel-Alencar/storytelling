@@ -85,7 +85,7 @@ function TriviaMethodGame() {
               }}
               onClick={() => handleOptionClick(option)}
             >
-              {option}
+              <p>{option}</p>
             </button>
           ))}
         </div>
@@ -93,7 +93,7 @@ function TriviaMethodGame() {
         {/* Botão para avançar para a próxima pergunta */}
         {answered && (
           <button style={styles.nextButton} onClick={handleNextQuestion}>
-            Próxima Pergunta
+            <p>Próxima Pergunta</p>
           </button>
         )}
 

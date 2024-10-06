@@ -61,7 +61,7 @@ export default function ChapterPage({ name }) {
       <div className={styles.App}>
         <div className={styles.background}>
           <div className={styles.contentContainer}>
-            <p className={styles.name}>{displayedName}</p>
+            <h2 className={styles.name}>{displayedName}</h2>
           </div>
         </div>
       </div>
