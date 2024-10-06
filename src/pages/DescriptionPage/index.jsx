@@ -23,7 +23,7 @@ export default function DescriptionPage() {
 
   // Estado para o índice da história, inicializando com o valor do localStorage, se existir
   const [currentIndex, setCurrentIndex] = useState(() => {
-    const savedIndex = localStorage.getItem('currentIndex');
+    const savedIndex = localStorage.getItem('prologueIndex');
 
     localStorage.setItem('storyIndex', 0); 
     localStorage.setItem('chapterIndex', 0); 
@@ -71,7 +71,7 @@ export default function DescriptionPage() {
   useEffect(() => {
     setCompletedName(repeatSecondCharacter(story.prologue[currentIndex]));
     // Salva o índice no localStorage
-    localStorage.setItem('currentIndex', currentIndex);
+    localStorage.setItem('prologueIndex', currentIndex);
   }, [currentIndex]);
 
   return (
@@ -84,10 +84,12 @@ export default function DescriptionPage() {
         </div>
       </div>
 
+      {/* 
       <BackButton
         text={'Voltar'}
         onClick={handleToBackPage}
-      />
+      /> 
+      */}
       <NextButton 
         text={'Próximo'}
         onClick={handleToNextPage}

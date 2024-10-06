@@ -7,6 +7,10 @@ const LoginPage = ({ onStart }) => {
   const navigate = useNavigate();
 
   const handleToStoryPage = () => {
+    localStorage.setItem('prologueIndex', 0); 
+    localStorage.setItem('chapterIndex', 0); 
+    localStorage.setItem('storyIndex', 0);
+
     navigate('/prologue');
   }
 

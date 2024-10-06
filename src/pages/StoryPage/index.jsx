@@ -16,8 +16,8 @@ export default function StoryPage() {
   const [storyIndex, setStoryIndex] = useState(savedIndex);
 
   // Carrega o índice do capítulo do localStorage (ou usa 0 se não houver)
-  const savedChapter = localStorage.getItem('storyChapter') 
-    ? parseInt(localStorage.getItem('storyChapter')) 
+  const savedChapter = localStorage.getItem('chapterIndex') 
+    ? parseInt(localStorage.getItem('chapterIndex')) 
     : 0;
   const [storyChapter, setStoryChapter] = useState(savedChapter);
 
@@ -48,7 +48,7 @@ export default function StoryPage() {
         setStoryChapter(newChapter);
         // Salva o progresso no localStorage
         localStorage.setItem('storyIndex', newIndex); 
-        localStorage.setItem('storyChapter', newChapter);
+        localStorage.setItem('chapterIndex', newChapter);
         
         navigate('/chapter', {
           state: {
@@ -90,7 +90,7 @@ export default function StoryPage() {
         setStoryChapter(newChapter);
         // Salva o progresso no localStorage
         localStorage.setItem('storyIndex', newIndex); 
-        localStorage.setItem('storyChapter', newChapter); 
+        localStorage.setItem('chapterIndex', newChapter); 
 
         navigate('/chapter', {
           state: {
@@ -106,7 +106,7 @@ export default function StoryPage() {
   // Função para carregar o progresso ao iniciar a página
   useEffect(() => {
     const storedIndex = localStorage.getItem('storyIndex');
-    const storedChapter = localStorage.getItem('storyChapter');
+    const storedChapter = localStorage.getItem('chapterIndex');
     if (storedIndex) {
       setStoryIndex(parseInt(storedIndex));
     }
@@ -148,10 +148,12 @@ export default function StoryPage() {
         />
       </div>
 
+      {/* 
       <BackButton 
         text={"Voltar"}
         onClick={changeBackStoryIndex}
-      />
+      /> 
+      */}
       <NextButton 
         text={"Próximo"}
         onClick={changeNextStoryIndex}

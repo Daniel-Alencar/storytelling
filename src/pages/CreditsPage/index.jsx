@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
+
 import BackButton from '../../components/BackButton';
+import NextButton from '../../components/NextButton';
 
 import { story } from '../../utils/story';
 
@@ -38,7 +40,7 @@ export default function CreditsPage() {
         </div>
       </div>
 
-      <BackButton
+      <NextButton
         text={'Voltar ao Menu Inicial'}
         onClick={handleToMainMenu}
       />
