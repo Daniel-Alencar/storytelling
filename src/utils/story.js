@@ -3,6 +3,7 @@ import backgroundImage1 from '../assets/StoryPage/background1.webp';
 
 import character0 from '../assets/StoryPage/character0.png';
 import character1 from '../assets/StoryPage/character1.png';
+import character2 from '../assets/StoryPage/character2.png';
 
 export const story = {
   title: "O Destino Além das Estrelas: A Missão que Mudou Tudo",
@@ -20,7 +21,7 @@ export const story = {
           title: "Título 0",
           description: `Diálogo 0`,
           backgroundImage: backgroundImage0,
-          characterImage: character0,
+          characterImage: character2,
         },
         {
           title: "Título 1",

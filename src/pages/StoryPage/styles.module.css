@@ -11,6 +11,31 @@
 }
 
 .characterImg {
-  /* Ajuste o tamanho da imagem conforme necessário */
   height: 500px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
 }
+
+.characterImg.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.characterImg.exiting {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.background {
+  transition: background-image 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  opacity: 0;
+}
+
+.background.loaded {
+  opacity: 1;
+}
+
+.background.exiting {
+  opacity: 0;
+}
+

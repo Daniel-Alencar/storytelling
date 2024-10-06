@@ -105,6 +105,28 @@ export default function StoryPage() {
     }
   }, []);
 
+  useEffect(() => {
+    const characterImg = document.querySelector(`.${styles.characterImg}`);
+    characterImg.classList.remove(styles.loaded);
+    characterImg.classList.add(styles.exiting);
+    
+    setTimeout(() => {
+      characterImg.classList.remove(styles.exiting);
+      characterImg.classList.add(styles.loaded);
+    }, 100);
+  }, [storyIndex]);
+
+  useEffect(() => {
+    const backgroundDiv = document.querySelector(`.${styles.background}`);
+    backgroundDiv.classList.remove(styles.loaded);
+    backgroundDiv.classList.add(styles.exiting);
+    
+    setTimeout(() => {
+      backgroundDiv.classList.remove(styles.exiting);
+      backgroundDiv.classList.add(styles.loaded);
+    }, 100);
+  }, [storyIndex]);
+
 
   return (
     <div className={styles.App}>
