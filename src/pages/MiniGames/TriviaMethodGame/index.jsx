@@ -69,7 +69,7 @@ function TriviaMethodGame() {
     <div style={styles.background}>
       <div style={styles.container}>
         <div style={styles.questionContainer}>
-          <h2 style={{ color: 'white' }}>Pergunta {currentQuestionIndex + 1} de {quizData.length}</h2>
+          <h2 style={{ color: 'white' }}>Question {currentQuestionIndex + 1} of {quizData.length}</h2>
           <p style={{ color: 'white', fontSize: '1.2rem' }}>{quizData[currentQuestionIndex].question}</p>
         </div>
 
